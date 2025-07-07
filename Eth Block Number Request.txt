@@ -1,0 +1,13 @@
+const axios = require("axios");
+
+const payload = {
+  jsonrpc: "2.0",
+  id: 1,
+  method: "eth_blockNumber",
+  params: []
+};
+
+axios.post("https://eth-mainnet.g.alchemy.com/v2/4UjvaNeaH9VVr-5RkvcsIVZx8_hJ0DvG", payload)
+  .then(response => {
+    console.log(response.data);
+  });

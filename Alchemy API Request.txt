@@ -1,0 +1,16 @@
+import requests
+import json
+
+url = "https://eth-mainnet.g.alchemy.com/v2/4UjvaNeaH9VVr-5RkvcsIVZx8_hJ0DvG"
+
+payload = {
+  "jsonrpc":"2.0",
+  "id":1,
+  "method":"eth_getBlockByNumber",
+  "params":["latest", False]
+}
+
+headers = {"Content-Type": "application/json"}
+
+response = requests.post(url, headers=headers, data=json.dumps(payload))
+print(response.json())
